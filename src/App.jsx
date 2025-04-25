@@ -41,6 +41,18 @@ function App() {
     return <h2>Error: {error}</h2>;
   }
 
+  // Show "Refresh" button if no tours are left
+  if (tours.length === 0) {
+    return (
+      <div>
+        <h2>No tours left</h2>
+        <button onClick={() => window.location.reload()} className="refresh-btn">
+          Refresh
+        </button>
+      </div>
+    );
+  }
+
   // Render Gallery with tours data
   return (
     <div>
